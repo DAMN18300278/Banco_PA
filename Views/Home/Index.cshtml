@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Empiece su experiencia por nuestro buen banco internacional</p>
+    <table class="table">
+        <thead>
+            <tr>
+                Opciones
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <a asp-area="" asp-controller="Usuarios" asp-action="Index" class="btn btn-info">Usuarios</a>
+            </tr>
+            <tr>
+                <a asp-area="" asp-controller="Cuenta" asp-action="Index" class="btn btn-info">Cuentas</a>
+            </tr>
+            <tr>
+                <a asp-area="" asp-controller="Empleadoes" asp-action="Index" class="btn btn-info">Empleados</a>
+            </tr>
+            <tr>
+                <a asp-area="" asp-controller="DatosPrestamoes" asp-action="Index" class="btn btn-info">Datos prestamos</a>
+            </tr>
+        </tbody>
+    </table>
+</div>

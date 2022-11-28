@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Banco.Models.Historial>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PagoRealizados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PagoPendientes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NominaEncargadoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumCuentaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagoRealizados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PagoPendientes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NominaEncargadoNavigation.Nomina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumCuentaNavigation.NumCuenta)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.NumHistorial">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.NumHistorial">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.NumHistorial">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

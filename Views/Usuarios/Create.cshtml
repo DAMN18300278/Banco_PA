@@ -1,0 +1,60 @@
+﻿@model Banco.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+</script>
+<h1>Create</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Curp" class="control-label"></label> 
+                <input asp-for="Curp" class="form-control" />
+                <span asp-validation-for="Curp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreS" class="control-label">Nombre(s)</label>
+                <input asp-for="NombreS" type="text" pattern="[A-Za-z]"class="form-control"/>
+                <span asp-validation-for="NombreS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoP" class="control-label">Apellido Paterno</label>
+                <input asp-for="ApellidoP" type="text" class="form-control"/>
+                <span asp-validation-for="ApellidoP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApellidoM" class="control-label">Apellido Materno</label>
+                <input asp-for="ApellidoM" type="text" class="form-control" />
+                <span asp-validation-for="ApellidoM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cumpleaños" class="control-label">Fecha de Nacimiento</label>
+                <input asp-for="Cumpleaños" type="date" class="form-control" />
+                <span asp-validation-for="Cumpleaños" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contraseña" class="control-label"></label>
+                <input asp-for="Contraseña" class="form-control" />
+                <span asp-validation-for="Contraseña" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
