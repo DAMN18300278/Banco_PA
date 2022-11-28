@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "F:\\DescargasF\\Banco_PA-main\\Banco.csproj": {}
+    "C:\\Users\\Diego\\Desktop\\banco_PA\\Banco_PA\\Banco.csproj": {}
   },
   "projects": {
-    "F:\\DescargasF\\Banco_PA-main\\Banco.csproj": {
+    "C:\\Users\\Diego\\Desktop\\banco_PA\\Banco_PA\\Banco.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\DescargasF\\Banco_PA-main\\Banco.csproj",
+        "projectUniqueName": "C:\\Users\\Diego\\Desktop\\banco_PA\\Banco_PA\\Banco.csproj",
         "projectName": "Banco",
-        "projectPath": "F:\\DescargasF\\Banco_PA-main\\Banco.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "F:\\DescargasF\\Banco_PA-main\\obj\\",
+        "projectPath": "C:\\Users\\Diego\\Desktop\\banco_PA\\Banco_PA\\Banco.csproj",
+        "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Diego\\Desktop\\banco_PA\\Banco_PA\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Diego\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -72,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

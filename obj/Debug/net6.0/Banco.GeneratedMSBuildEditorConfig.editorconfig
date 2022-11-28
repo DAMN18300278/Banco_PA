@@ -5,180 +5,181 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Banco
 build_property.RootNamespace = Banco
-build_property.ProjectDir = f:\DescargasF\Banco_PA-main\
+build_property.ProjectDir = C:\Users\Diego\Desktop\banco_PA\Banco_PA\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = f:\DescargasF\Banco_PA-main
+build_property.MSBuildProjectDirectory = C:\Users\Diego\Desktop\banco_PA\Banco_PA
 build_property._RazorSourceGeneratorDebug = 
 
-[f:/DescargasF/Banco_PA-main/Views/Cuenta/Create.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Cuenta/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Cuenta/Delete.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Cuenta/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Cuenta/Details.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Cuenta/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Cuenta/Edit.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Cuenta/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Cuenta/Index.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Cuenta/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/DatosPrestamoes/Create.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/DatosPrestamoes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NQcmVzdGFtb2VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/DatosPrestamoes/Delete.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/DatosPrestamoes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NQcmVzdGFtb2VzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/DatosPrestamoes/Details.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/DatosPrestamoes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NQcmVzdGFtb2VzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/DatosPrestamoes/Edit.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/DatosPrestamoes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NQcmVzdGFtb2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/DatosPrestamoes/Index.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/DatosPrestamoes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NQcmVzdGFtb2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Empleadoes/Create.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Empleadoes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9lc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Empleadoes/Delete.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Empleadoes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9lc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Empleadoes/Details.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Empleadoes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9lc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Empleadoes/Edit.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Empleadoes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9lc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Empleadoes/Index.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Empleadoes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9lc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Gerentes/Create.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Gerentes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW50ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Gerentes/Delete.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Gerentes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW50ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Gerentes/Details.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Gerentes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW50ZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Gerentes/Edit.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Gerentes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW50ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Gerentes/Index.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Gerentes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VyZW50ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Historials/Create.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Historials/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yaWFsc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Historials/Delete.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Historials/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yaWFsc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Historials/Details.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Historials/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yaWFsc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Historials/Edit.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Historials/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yaWFsc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Historials/Index.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Historials/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yaWFsc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Home/Index.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Home/Privacy.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Rifas/Create.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Rifas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlmYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Rifas/Delete.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Rifas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlmYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Rifas/Details.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Rifas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlmYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Rifas/Edit.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Rifas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlmYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Rifas/Index.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Rifas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmlmYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Shared/Error.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Usuarios/Create.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Usuarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Usuarios/Delete.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Usuarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Usuarios/Details.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Usuarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Usuarios/Edit.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Usuarios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Usuarios/Index.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/_ViewImports.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/_ViewStart.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[f:/DescargasF/Banco_PA-main/Views/Shared/_Layout.cshtml]
+[C:/Users/Diego/Desktop/banco_PA/Banco_PA/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-won85v5ops
