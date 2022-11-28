@@ -32,7 +32,7 @@ namespace Banco.Controllers
                 if(usuario.Contraseña.Equals(usuarioValidar.Contraseña) && usuarioValidar.Autorizada.Equals(true)){
                     return RedirectToAction("Index", "Usuarios");
                 }else{
-                    return RedirectToAction("Index", "Rifas");
+                    return RedirectToAction(nameof(Login));
                 }
             }
 
