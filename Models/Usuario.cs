@@ -21,6 +21,8 @@ public partial class Usuario
 
     public string Contraseña { get; set; } = null!;
 
+    public bool? Autorizada { get; set; }
+
     public virtual ICollection<Cuentum> Cuenta { get; } = new List<Cuentum>();
 
     public virtual ICollection<Empleado> Empleados { get; } = new List<Empleado>();

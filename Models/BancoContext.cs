@@ -182,6 +182,10 @@ public partial class BancoContext : DbContext
                 .HasMaxLength(20)
                 .IsUnicode(false)
                 .HasColumnName("Contraseña");
+            entity.Property(e => e.Autorizada)
+                .IsUnicode(false)
+                .HasColumnName("Autorizada")
+                .HasDefaultValueSql("((0))");
         });
 
         OnModelCreatingPartial(modelBuilder);

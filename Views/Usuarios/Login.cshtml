@@ -23,6 +23,30 @@
         </svg>
         <h4 class="mt-1 mb-3 pb-1">Banco Inbursa</h4>
         </div>
+
+        <form asp-action="ValidationUser">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Curp" class="form-control" placeholder="Curp"/>
+                <label asp-for="Curp" class="form2Example11">Usuario</label>
+                <span asp-validation-for="Curp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Contraseña" class="form-control"/>
+                <label asp-for="Contraseña" class="form2Example11">Contraseña</label>
+                <span asp-validation-for="Contraseña" class="text-danger"></span>
+            </div>
+
+            <div class="text-center pt-1 mb-5 pb-1">
+                <input class="btn btn-outline-success btn-block mb-3" type="submit" value="Ingresar">
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center pb-4">
+                <p class="mb-0 me-2">Cree una cuenta: </p>
+                <a class="btn btn-outline-danger" asp-area="" asp-controller="Home" asp-action="Register">Registrarse</a>
+            </div>
+
+        </form>   
     </section>
 </div>
 

@@ -18,10 +18,36 @@ namespace Banco.Controllers
             _context = context;
         }
 
+        public IActionResult ValidationUser(){
+            return RedirectToAction(nameof(Login));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ValidationUser([Bind("Curp,Contraseña")] Usuario usuario){
+            var usuarioValidar = await _context.Usuarios.FindAsync(usuario.Curp);
+            
+            if(usuarioValidar != null)
+            {
+                if(usuario.Contraseña.Equals(usuarioValidar.Contraseña) && usuarioValidar.Autorizada.Equals(true)){
+                    return RedirectToAction("Index", "Usuarios");
+                }else{
+                    return RedirectToAction("Index", "Rifas");
+                }
+            }
+
+            return RedirectToAction(nameof(Login));
+        }
+
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
               return View(await _context.Usuarios.ToListAsync());
+        }
+
+        public async Task<IActionResult> Login()
+        {
+            return View();
         }
 
         // GET: Usuarios/Details/5

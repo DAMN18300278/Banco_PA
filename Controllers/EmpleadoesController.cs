@@ -36,7 +36,7 @@ namespace Banco.Controllers
             var empleado = await _context.Empleados
                 .Include(e => e.CurpNavigation)
                 .FirstOrDefaultAsync(m => m.Nomina == id);
-            if (empleado == null)
+            if (empleado == null)   
             {
                 return NotFound();
             }
