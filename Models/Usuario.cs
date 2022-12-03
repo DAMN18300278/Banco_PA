@@ -6,19 +6,20 @@ namespace Banco.Models;
 
 public partial class Usuario
 {
+    [StringLength(19)]
     public string Curp { get; set; } = null!;
-
-    [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Ingrese un nombre valido por favor")]
+    [StringLength(200)]
+    [RegularExpression(@"^[a-zA-ZáéíóúÁÉÍÓÚ]+$", ErrorMessage = "Ingrese un nombre valido por favor")]
     public string NombreS { get; set; } = null!;
-
-    [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Ingrese un nombre valido por favor")]
+    [StringLength(30)]
+    [RegularExpression(@"^[a-zA-ZáéíóúÁÉÍÓÚ]+$", ErrorMessage = "Ingrese un apellido valido por favor")]
     public string ApellidoP { get; set; } = null!;
-
-    [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Ingrese un nombre valido por favor")]
+    [StringLength(30)]
+    [RegularExpression(@"^[a-zA-ZáéíóúÁÉÍÓÚ]+$", ErrorMessage = "Ingrese un apellido valido por favor")]
     public string ApellidoM { get; set; } = null!;
 
     public bool? Autorizada { get; set; }
-    
+
     [datevalidation]
     public DateTime Cumpleaños { get; set; }
     [StringLength(20)]
@@ -46,4 +47,3 @@ public class datevalidation : ValidationAttribute
         }
     }
 }
-
