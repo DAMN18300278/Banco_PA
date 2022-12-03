@@ -1,4 +1,5 @@
 using Banco.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,15 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BancoContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("conexion")));
+
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.Cookie.Name = "User";
+    options.IdleTimeout = TimeSpan.FromDays(2);
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -25,6 +35,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

@@ -17,6 +17,16 @@ namespace Banco.Controllers
         {
             _context = context;
         }
+        public ActionResult Session()
+        {
+            Usuario nombreSession = _context.Usuarios.Find(HttpContext.Session.GetString("User"));
+            if(nombreSession != null)
+            {
+                ViewData["User"] = "Bienvenido " + nombreSession.NombreS;
+            }
+            return View();
+        }
+
 
         // GET: Gerentes
         public async Task<IActionResult> Index()

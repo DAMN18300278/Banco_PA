@@ -3,51 +3,65 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Bienvenido</h1>
-    <p>Empiece su experiencia por nuestro buen banco internacional</p>
-
-    <section class="text-center h-100 gradient-form" style="width: 50%; display: inline-block;">
-        <div class="text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-bank" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-            <line x1="3" y1="21" x2="21" y2="21" />
-            <line x1="3" y1="10" x2="21" y2="10" />
-            <polyline points="5 6 12 3 19 6" />
-            <line x1="4" y1="10" x2="4" y2="21" />
-            <line x1="20" y1="10" x2="20" y2="21" />
-            <line x1="8" y1="14" x2="8" y2="17" />
-            <line x1="12" y1="14" x2="12" y2="17" />
-            <line x1="16" y1="14" x2="16" y2="17" />
-        </svg>
-        <h4 class="mt-1 mb-3 pb-1">Banco Inbursa</h4>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Usuarios" asp-action="Login">Banco</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
+    </nav>
+</header>
 
-        <form asp-action="ValidationUser">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <input asp-for="Curp" class="form-control" placeholder="Curp"/>
-                <label asp-for="Curp" class="form2Example11">Usuario</label>
-                <span asp-validation-for="Curp" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input asp-for="Contraseña" class="form-control"/>
-                <label asp-for="Contraseña" class="form2Example11">Contraseña</label>
-                <span asp-validation-for="Contraseña" class="text-danger"></span>
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Bienvenido</h1>
+        <p>Empiece su experiencia por nuestro buen banco internacional</p>
+
+        <section class="text-center h-100 gradient-form" style="width: 50%; display: inline-block;">
+            <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-bank" width="100" height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <line x1="3" y1="21" x2="21" y2="21" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <polyline points="5 6 12 3 19 6" />
+                <line x1="4" y1="10" x2="4" y2="21" />
+                <line x1="20" y1="10" x2="20" y2="21" />
+                <line x1="8" y1="14" x2="8" y2="17" />
+                <line x1="12" y1="14" x2="12" y2="17" />
+                <line x1="16" y1="14" x2="16" y2="17" />
+            </svg>
+            <h4 class="mt-1 mb-3 pb-1">Banco Inbursa</h4>
             </div>
 
-            <div class="text-center pt-1 mb-5 pb-1">
-                <input class="btn btn-outline-success btn-block mb-3" type="submit" value="Ingresar">
-            </div>
+            <form asp-action="ValidationUser">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="Curp" class="form-control" placeholder="Curp"/>
+                    <label asp-for="Curp" class="form2Example11">Usuario</label>
+                    <span asp-validation-for="Curp" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="Contraseña" class="form-control"/>
+                    <label asp-for="Contraseña" class="form2Example11">Contraseña</label>
+                    <span asp-validation-for="Contraseña" class="text-danger"></span>
+                </div>
 
-            <div class="d-flex align-items-center justify-content-center pb-4">
-                <p class="mb-0 me-2">Cree una cuenta: </p>
-                <a class="btn btn-outline-danger" asp-area="" asp-controller="Usuarios" asp-action="Create">Registrarse</a>
-            </div>
+                <div class="text-center pt-1 mb-5 pb-1">
+                    <input class="btn btn-outline-success btn-block mb-3" type="submit" value="Ingresar">
+                </div>
 
-        </form>   
-    </section>
+                <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Cree una cuenta: </p>
+                    <a class="btn btn-outline-danger" asp-area="" asp-controller="Usuarios" asp-action="Create">Registrarse</a>
+                </div>
+
+            </form>   
+        </section>
+    </div>
 </div>
 
 @section Scripts {

@@ -18,6 +18,15 @@ namespace Banco.Controllers
             _context = context;
         }
 
+        public ActionResult Session()
+        {
+            if(TempData["User"] != null)
+            {
+                ViewBag.User = TempData["User"].ToString();
+            }
+            return View();
+        }
+
         // GET: Cuenta
         public async Task<IActionResult> Index()
         {

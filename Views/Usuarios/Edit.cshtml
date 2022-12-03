@@ -4,6 +4,19 @@
     ViewData["Title"] = "Edit";
 }
 
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Gerentes" asp-action="Session">Banco</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
 <h1>Edit</h1>
 
 <h4>Usuario</h4>
@@ -43,6 +56,10 @@
                 <span asp-validation-for="Contraseña" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Autorizada" class="control-label"></label>
+                <select asp-for="Autorizada" class ="form-control" asp-items="ViewBag.Auth"></select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-danger" />
             </div>
         </form>
@@ -52,6 +69,8 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+</div>
+    
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

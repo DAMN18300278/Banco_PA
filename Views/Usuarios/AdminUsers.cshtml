@@ -1,0 +1,101 @@
+@model IEnumerable<Banco.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Gerente" asp-action="Session">Banco</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <main role="main" class="pb-3 text-center">
+        <h1 class="display-4">@ViewBag.User</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Curp)
+                    </th>
+                    <th>
+                        Nombre(s)
+                    </th>
+                    <th>
+                        Apellido Paterno
+                    </th>
+                    <th>
+                        Apellido Materno
+                    </th>
+                    <th>
+                        Fecha de Nacimiento
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Contraseña)
+                    </th>
+                    <th>
+                        Estado
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Curp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreS)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApellidoP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApellidoM)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cumpleaños)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contraseña)
+                    </td>
+                    <td>
+                        @if(item.Autorizada.Equals(false))
+                        {
+                            <p class="text-primary">
+                                Pendiente
+                            </p> 
+                        }else if(item.Autorizada.Equals(true))
+                        {
+                            <p class="text-success">
+                                Aceptado
+                            </p>
+                        }else if(item.Autorizada.Equals(null))
+                        {
+                            <p class="text-danger">
+                                Rechazado
+                            </p>
+                        }
+                    </td>
+                    <td>
+                    <a asp-action="Edit" asp-route-id="@item.Curp">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Curp">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Curp">Delete</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+
+
+    </main>
+</div>
+

@@ -857,3 +857,6 @@ C:\Users\Diego\Desktop\banco_PA\Banco_PA\obj\Debug\net6.0\refint\Banco.dll
 C:\Users\Diego\Desktop\banco_PA\Banco_PA\obj\Debug\net6.0\Banco.pdb
 C:\Users\Diego\Desktop\banco_PA\Banco_PA\obj\Debug\net6.0\Banco.genruntimeconfig.cache
 C:\Users\Diego\Desktop\banco_PA\Banco_PA\obj\Debug\net6.0\ref\Banco.dll
+C:\Users\Diego\Desktop\banco_PA\Banco_PA\bin\Debug\net6.0\System.Net.Http.Formatting.dll
+C:\Users\Diego\Desktop\banco_PA\Banco_PA\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\Diego\Desktop\banco_PA\Banco_PA\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

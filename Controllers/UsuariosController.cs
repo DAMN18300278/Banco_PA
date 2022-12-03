@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Banco.Models;
+using Microsoft.AspNetCore.Session;
+
 
 namespace Banco.Controllers
 {
@@ -30,7 +32,20 @@ namespace Banco.Controllers
             if(usuarioValidar != null)
             {
                 if(usuario.Contraseña.Equals(usuarioValidar.Contraseña) && usuarioValidar.Autorizada.Equals(true)){
-                    return RedirectToAction("Index", "Usuarios");
+                    TempData["User"] = "Bienvenido " + usuarioValidar.NombreS;
+
+                    if(_context.Empleados.Any(e => e.Curp == usuarioValidar.Curp))
+                    {
+                        if(_context.Gerentes.Where(b => b.Nomina == _context.Empleados.Where(b => b.Curp == usuarioValidar.Curp).FirstOrDefault().Nomina) != null)
+                        {
+                            HttpContext.Session.SetString("User", usuarioValidar.Curp);
+                            return RedirectToAction("Session", "Gerentes");
+                        }else{
+                            return RedirectToAction("Session", "Empleadoes");
+                        }
+                    }
+                    return RedirectToAction("Session", "Cuenta");
+
                 }else{
                     return RedirectToAction(nameof(Login));
                 }
@@ -48,6 +63,11 @@ namespace Banco.Controllers
         public async Task<IActionResult> Login()
         {
             return View();
+        }
+                
+        public async Task<IActionResult> AdminUsers()
+        {
+            return View(await _context.Usuarios.ToListAsync());
         }
 
         // GET: Usuarios/Details/5
@@ -103,6 +123,11 @@ namespace Banco.Controllers
             {
                 return NotFound();
             }
+            ViewData["Auth"] = new SelectList(new List<SelectListItem>{
+                new SelectListItem { Selected = false, Text = "Aprobado", Value = "true"},
+                new SelectListItem { Selected = false, Text = "Rechazado", Value = "null"},
+                new SelectListItem { Selected = true, Text = "Pendiente", Value = "false"}
+            }, "Value", "Text");
             return View(usuario);
         }
 
