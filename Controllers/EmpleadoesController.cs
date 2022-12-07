@@ -18,6 +18,16 @@ namespace Banco.Controllers
             _context = context;
         }
 
+        public ActionResult Session()
+        {
+            Usuario nombreSession = _context.Usuarios.Find(HttpContext.Session.GetString("User"));
+            if(nombreSession != null)
+            {
+                ViewData["User"] = "Bienvenido " + nombreSession.NombreS;
+            }
+            return View();
+        }
+
         // GET: Empleadoes
         public async Task<IActionResult> Index()
         {
@@ -42,6 +52,12 @@ namespace Banco.Controllers
             }
 
             return View(empleado);
+        }
+        
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Usuarios");
         }
 
         // GET: Empleadoes/Create

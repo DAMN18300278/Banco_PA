@@ -4,51 +4,89 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Gerentes" asp-action="Session">Banco</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-nav ml-auto">
+                <span class="align-middle mb-auto">@ViewData["User"] <a class="btn btn-outline-danger" asp-area="" asp-controller="Cuenta" asp-action="Logout">Logout</a></span>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<div>
-    <h4>Usuario</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Curp)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Curp)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombreS)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NombreS)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ApellidoP)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ApellidoP)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ApellidoM)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ApellidoM)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cumpleaños)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cumpleaños)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Contraseña)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Contraseña)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Curp">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="container">
+    <h1>Details</h1>
+
+    <div>
+        <h4>Usuario</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Curp)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Curp)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.NombreS)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.NombreS)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ApellidoP)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ApellidoP)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.ApellidoM)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.ApellidoM)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Cumpleaños)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Cumpleaños)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Nom_Usuario)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Nom_Usuario)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Contraseña)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Contraseña)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Autorizada)
+            </dt>
+            <dd class = "col-sm-10">
+                @if(Model.Autorizada == 0)
+                {
+                    <span class="text-primary">Pendiente</span>
+                }else if(Model.Autorizada == 1)
+                {
+                    <span class="text-danger">Rechazada</span>
+                }else if(Model.Autorizada == 2)
+                {
+                    <span class="text-success">Aceptada</span>
+                }
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model?.Curp">Edit</a> |
+        <a asp-action="AdminUsers">Back to List</a>
+    </div>
 </div>

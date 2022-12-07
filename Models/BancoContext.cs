@@ -52,6 +52,10 @@ public partial class BancoContext : DbContext
             entity.HasOne(d => d.UsuarioNavigation).WithMany(p => p.Cuenta)
                 .HasForeignKey(d => d.Usuario)
                 .HasConstraintName("cuentaUsuario_usuarioCURP");
+
+            entity.Property(e => e.Prestamo_Activo)
+                .HasColumnName("Prestamo_Activo")
+                .HasDefaultValueSql("((0))");
         });
 
         modelBuilder.Entity<DatosPrestamo>(entity =>
@@ -186,6 +190,10 @@ public partial class BancoContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("Autorizada")
                 .HasDefaultValueSql("((0))");
+            entity.Property(e => e.Nom_Usuario)
+                .IsUnicode(false)
+                .HasMaxLength(50)
+                .HasColumnName("Nom_Usuario");
         });
 
         OnModelCreatingPartial(modelBuilder);

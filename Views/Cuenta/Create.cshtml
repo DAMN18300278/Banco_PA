@@ -4,32 +4,48 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Gerentes" asp-action="Session">Banco</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-nav ml-auto">
+                <span class="align-middle mb-auto">@ViewData["User"] <a class="btn btn-outline-danger" asp-area="" asp-controller="Cuenta" asp-action="Logout">Logout</a></span>
+            </div>
+        </div>
+    </nav>
+</header>
 
-<h4>Cuenta</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Saldo" class="control-label"></label>
-                <input asp-for="Saldo" value="10000" type="number" class="form-control" />
-                <span asp-validation-for="Saldo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Usuario" class="control-label"></label>
-                <select asp-for="Usuario" class ="form-control" asp-items="ViewBag.Usuario"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container">
+    <h1>Crear cuenta</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Saldo" class="control-label"></label>
+                    <input asp-for="Saldo" value="10000" type="number" class="form-control" />
+                    <span asp-validation-for="Saldo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Usuario" class="control-label"></label>
+                    <select asp-for="Usuario" class ="form-control" asp-items="ViewBag.Usuario"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div>
+        <a asp-action="AdminAccounts">Back to List</a>
+    </div>
 </div>
 
 @section Scripts {

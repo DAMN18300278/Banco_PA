@@ -20,11 +20,23 @@ namespace Banco.Controllers
 
         public ActionResult Session()
         {
-            if(TempData["User"] != null)
+            Usuario nombreSession = _context.Usuarios.Find(HttpContext.Session.GetString("User"));
+            if(nombreSession != null)
             {
-                ViewBag.User = TempData["User"].ToString();
+                ViewData["User"] = nombreSession.NombreS;
             }
             return View();
+        }
+
+        public async Task<IActionResult> AdminAccounts()
+        {
+            Usuario nombreSession = _context.Usuarios.Find(HttpContext.Session.GetString("User"));
+            if(nombreSession != null)
+            {
+                ViewData["User"] = nombreSession.NombreS;
+            }
+            var bancoContext = _context.Cuenta.Include(c => c.UsuarioNavigation);
+            return View(await bancoContext.ToListAsync());
         }
 
         // GET: Cuenta
@@ -52,6 +64,11 @@ namespace Banco.Controllers
 
             return View(cuentum);
         }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Usuarios");
+        }
 
         // GET: Cuenta/Create
         public IActionResult Create()
@@ -77,11 +94,11 @@ namespace Banco.Controllers
                     }
                 }
                 if(state){
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(AdminAccounts));
                 }else{
                     _context.Add(cuentum);
                     await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(AdminAccounts));
                 }
             }
             ViewData["Usuario"] = new SelectList(_context.Usuarios, "Curp", "Curp", cuentum.Usuario);

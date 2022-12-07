@@ -11,6 +11,8 @@ public partial class Cuentum
 
     public double Saldo { get; set; } = 10000;
 
+    public bool Prestamo_Activo { get; set; } = false;
+
     public virtual ICollection<Historial> Historials { get; } = new List<Historial>();
 
     public virtual ICollection<Rifa> Rifas { get; } = new List<Rifa>();

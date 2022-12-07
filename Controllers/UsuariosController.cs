@@ -26,19 +26,18 @@ namespace Banco.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ValidationUser([Bind("Curp,Contraseña")] Usuario usuario){
-            var usuarioValidar = await _context.Usuarios.FindAsync(usuario.Curp);
-            
+        public async Task<IActionResult> ValidationUser([Bind("Nom_Usuario,Contraseña")] Usuario usuario){
+            Usuario usuarioValidar = await _context.Usuarios.FindAsync(_context.Usuarios.Where(b => b.Nom_Usuario.Equals(usuario.Nom_Usuario)).FirstOrDefault()?.Curp ?? "p");
+
             if(usuarioValidar != null)
             {
-                if(usuario.Contraseña.Equals(usuarioValidar.Contraseña) && usuarioValidar.Autorizada.Equals(true)){
-                    TempData["User"] = "Bienvenido " + usuarioValidar.NombreS;
+                if(usuario.Contraseña.Equals(usuarioValidar.Contraseña) && usuarioValidar.Autorizada.Equals(2)){
+                    HttpContext.Session.SetString("User", usuarioValidar.Curp);
 
                     if(_context.Empleados.Any(e => e.Curp == usuarioValidar.Curp))
                     {
                         if(_context.Gerentes.Where(b => b.Nomina == _context.Empleados.Where(b => b.Curp == usuarioValidar.Curp).FirstOrDefault().Nomina) != null)
                         {
-                            HttpContext.Session.SetString("User", usuarioValidar.Curp);
                             return RedirectToAction("Session", "Gerentes");
                         }else{
                             return RedirectToAction("Session", "Empleadoes");
@@ -67,12 +66,22 @@ namespace Banco.Controllers
                 
         public async Task<IActionResult> AdminUsers()
         {
+            Usuario nombreSession = _context.Usuarios.Find(HttpContext.Session.GetString("User"));
+            if(nombreSession != null)
+            {
+                ViewData["User"] = nombreSession.NombreS;
+            }
             return View(await _context.Usuarios.ToListAsync());
         }
 
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(string id)
         {
+            Usuario nombreSession = _context.Usuarios.Find(HttpContext.Session.GetString("User"));
+            if(nombreSession != null)
+            {
+                ViewData["User"] = nombreSession.NombreS;
+            }
             if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
@@ -105,7 +114,7 @@ namespace Banco.Controllers
             {
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Login));
             }
             return View(usuario);
         }
@@ -123,11 +132,13 @@ namespace Banco.Controllers
             {
                 return NotFound();
             }
+            
             ViewData["Auth"] = new SelectList(new List<SelectListItem>{
-                new SelectListItem { Selected = false, Text = "Aprobado", Value = "true"},
-                new SelectListItem { Selected = false, Text = "Rechazado", Value = "null"},
-                new SelectListItem { Selected = true, Text = "Pendiente", Value = "false"}
+            new SelectListItem { Selected = false, Text = "Rechazado", Value = "1"},
+            new SelectListItem { Selected = false, Text = "Aceptado", Value = "2"},
+            new SelectListItem { Selected = false, Text = "Pendiente", Value = "0"}
             }, "Value", "Text");
+
             return View(usuario);
         }
 
@@ -136,12 +147,32 @@ namespace Banco.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Curp,NombreS,ApellidoP,ApellidoM,Cumpleaños,Contraseña")] Usuario usuario)
+        public async Task<IActionResult> Edit(string id, [Bind("Curp,NombreS,ApellidoP,ApellidoM,Cumpleaños,Autorizada")] Usuario usuario)
         {
+            var curp = usuario.Curp;
+
+            Usuario? tempUser = _context.Usuarios.Find(curp);
+
+            if(!tempUser.Autorizada.Equals(2) && usuario.Autorizada.Equals(2) && tempUser.Nom_Usuario == null)
+            {
+                int num_Nombre = 1;
+                usuario.Nom_Usuario = usuario.Curp.Substring(0, 4) + num_Nombre.ToString();
+
+                while(_context.Usuarios.Where(d => d.Nom_Usuario == usuario.Nom_Usuario).FirstOrDefault() != null)
+                {
+                    num_Nombre ++;
+                    usuario.Nom_Usuario = usuario.Curp.Substring(0, 4) + num_Nombre.ToString();
+                }
+
+                usuario.Contraseña = usuario.Cumpleaños.Day.ToString() + "-" + usuario.Cumpleaños.Month.ToString() + "-" + usuario.Cumpleaños.Year.ToString();
+            }
+
             if (id != usuario.Curp)
             {
                 return NotFound();
             }
+
+            _context.ChangeTracker.Clear();
 
             if (ModelState.IsValid)
             {
@@ -154,14 +185,14 @@ namespace Banco.Controllers
                 {
                     if (!UsuarioExists(usuario.Curp))
                     {
-                        return RedirectToAction(nameof(Index));
+                        return RedirectToAction(nameof(AdminUsers));
                     }
                     else
                     {
-                        throw;
+                        return NotFound();
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(AdminUsers));
             }
             return View(usuario);
         }

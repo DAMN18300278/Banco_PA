@@ -22,7 +22,7 @@ namespace Banco.Controllers
             Usuario nombreSession = _context.Usuarios.Find(HttpContext.Session.GetString("User"));
             if(nombreSession != null)
             {
-                ViewData["User"] = "Bienvenido " + nombreSession.NombreS;
+                ViewData["User"] = nombreSession.NombreS;
             }
             return View();
         }
@@ -52,6 +52,12 @@ namespace Banco.Controllers
             }
 
             return View(gerente);
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Usuarios");
         }
 
         // GET: Gerentes/Create

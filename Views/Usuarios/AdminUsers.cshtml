@@ -7,18 +7,21 @@
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
         <div class="container-fluid">
-            <a class="navbar-brand" asp-area="" asp-controller="Gerente" asp-action="Session">Banco</a>
+            <a class="navbar-brand" asp-area="" asp-controller="Gerentes" asp-action="Session">Banco</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="navbar-nav ml-auto">
+                <span class="align-middle mb-auto">@ViewData["User"] <a class="btn btn-outline-danger" asp-area="" asp-controller="Cuenta" asp-action="Logout">Logout</a></span>
+            </div>
         </div>
     </nav>
 </header>
 
 <div class="container">
     <main role="main" class="pb-3 text-center">
-        <h1 class="display-4">@ViewBag.User</h1>
+        <h1 class="display-4">Administrar cuentas</h1>
 
         <table class="table">
             <thead>
@@ -39,10 +42,13 @@
                         Fecha de Nacimiento
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Contraseña)
+                        Estado
                     </th>
                     <th>
-                        Estado
+                        Nombre de usuario
+                    </th>
+                    <th>
+                        Contraseña
                     </th>
                 </tr>
             </thead>
@@ -65,25 +71,28 @@
                         @Html.DisplayFor(modelItem => item.Cumpleaños)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Contraseña)
-                    </td>
-                    <td>
-                        @if(item.Autorizada.Equals(false))
+                        @if(item.Autorizada.Equals(0))
                         {
                             <p class="text-primary">
                                 Pendiente
                             </p> 
-                        }else if(item.Autorizada.Equals(true))
+                        }else if(item.Autorizada.Equals(2))
                         {
                             <p class="text-success">
                                 Aceptado
                             </p>
-                        }else if(item.Autorizada.Equals(null))
+                        }else if(item.Autorizada.Equals(1))
                         {
                             <p class="text-danger">
                                 Rechazado
                             </p>
                         }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nom_Usuario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Contraseña)
                     </td>
                     <td>
                     <a asp-action="Edit" asp-route-id="@item.Curp">Edit</a> |
@@ -94,8 +103,5 @@
             }
             </tbody>
         </table>
-
-
     </main>
 </div>
-

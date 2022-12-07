@@ -12,13 +12,16 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="navbar-nav ml-auto">
+                <span class="align-middle mb-auto">@ViewData["User"] <a class="btn btn-outline-danger" asp-area="" asp-controller="Cuenta" asp-action="Logout">Logout</a></span>
+            </div>
         </div>
     </nav>
 </header>
 
 <div class="container">
     <main role="main" class="pb-3 text-center">
-        <h1 class="display-4">@ViewData["User"]</h1>
+        <h1 class="display-4">Bienvenido @ViewData["User"]</h1>
 
         <div class="text-center">
             <h2 class="h2">Menu</h2>
@@ -26,7 +29,7 @@
                 <a class="list-group-item btn btn-outline-warning" asp-area="" asp-controller="Usuarios" asp-action="AdminUsers">
                     Solicitudes de cuentas
                 </a>
-                <a class="list-group-item btn btn-outline-success" asp-area="" asp-controller="Gerentes" asp-action="AdminPayments">
+                <a class="list-group-item btn btn-outline-success" asp-area="" asp-controller="Cuenta" asp-action="AdminAccounts">
                     Generar cuentas
                 </a>
                 <a class="list-group-item btn btn-outline-danger" asp-area="" asp-controller="Gerentes" asp-action="Index">
